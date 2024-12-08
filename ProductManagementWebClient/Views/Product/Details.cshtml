@@ -1,0 +1,28 @@
+﻿@model BusinessObjects.Product
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Product Detail";
+}
+
+<h2>Product Detail</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Product ID</dt>
+        <dd class="col-sm-9">@Model.ProductId</dd>
+
+        <dt class="col-sm-3">Product Name</dt>
+        <dd class="col-sm-9">@Model.ProductName</dd>
+
+        <dt class="col-sm-3">Category</dt>
+        <dd class="col-sm-9">@Model.Category?.CategoryName</dd>
+
+        <dt class="col-sm-3">Units in Stock</dt>
+        <dd class="col-sm-9">@Model.UnitsInStock</dd>
+
+        <dt class="col-sm-3">Unit Price</dt>
+        <dd class="col-sm-9">@Model.UnitPrice.ToString("C")</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
